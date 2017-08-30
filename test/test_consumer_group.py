@@ -6,7 +6,6 @@ import time
 import pytest
 from kafka.vendor import six
 
-from kafka import SimpleClient
 from kafka.conn import ConnectionStates
 from kafka.consumer.group import KafkaConsumer
 from kafka.coordinator.base import MemberState, Generation

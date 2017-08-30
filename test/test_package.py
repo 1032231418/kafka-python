@@ -9,20 +9,20 @@ class TestPackage(unittest.TestCase):
         self.assertEqual(kafka1.codec.__name__, "kafka.codec")
 
     def test_submodule_namespace(self):
-        import kafka.client as client1
-        self.assertEqual(client1.__name__, "kafka.client")
+        import kafka.client_async as client1
+        self.assertEqual(client1.__name__, "kafka.client_async")
 
-        from kafka import client as client2
-        self.assertEqual(client2.__name__, "kafka.client")
+        from kafka import client_async as client2
+        self.assertEqual(client2.__name__, "kafka.client_async")
 
-        from kafka.client import SimpleClient as SimpleClient1
-        self.assertEqual(SimpleClient1.__name__, "SimpleClient")
+        from kafka.client_async import KafkaClient as KafkaClient1
+        self.assertEqual(KafkaClient1.__name__, "KafkaClient")
+
+        from kafka import KafkaClient as KafkaClient2
+        self.assertEqual(KafkaClient2.__name__, "KafkaClient")
 
         from kafka.codec import gzip_encode as gzip_encode1
         self.assertEqual(gzip_encode1.__name__, "gzip_encode")
-
-        from kafka import SimpleClient as SimpleClient2
-        self.assertEqual(SimpleClient2.__name__, "SimpleClient")
 
         from kafka.codec import snappy_encode
         self.assertEqual(snappy_encode.__name__, "snappy_encode")

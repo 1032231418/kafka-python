@@ -10,13 +10,11 @@ import uuid
 import pytest
 from . import unittest
 
-from kafka import SimpleClient, create_message
 from kafka.errors import (
     LeaderNotAvailableError, KafkaTimeoutError, InvalidTopicError,
     NotLeaderForPartitionError, UnknownTopicOrPartitionError,
     FailedPayloadsError
 )
-from kafka.structs import OffsetRequestPayload, ProduceRequestPayload
 from test.fixtures import random_string, version_str_to_list, version as kafka_version #pylint: disable=wrong-import-order
 
 
